@@ -1,0 +1,22 @@
+<h1>Les meilleurs restaurants de la région!</h1>
+
+<% @restaurants.each do |restaurant| %>
+    <div class="bg-light border my-3 p-3">
+      <p><em>
+        <%= restaurant.category %>
+      </em></p>
+      <%= link_to restaurant_path(restaurant) do %>
+        <p class="font-weight-bold">
+          <%= restaurant.name %>
+        </p>
+      <% end %>
+      <p>
+        <%= restaurant.address %>
+      </p>
+      <p>
+        Tel: <%= restaurant.phone_number %>
+      </p>
+    </div>
+  <% end %>
+
+<%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary" %>
